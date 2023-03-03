@@ -39,4 +39,22 @@ public class StudentController {
 
         return ResponseEntity.ok(studentDtoResponse);
     }
+
+    @PutMapping("/update-student-cost/{studentId}")
+    public ResponseEntity<StudentDto> updateStudentName(@PathVariable Integer studentId, @RequestBody StudentDto studentDto) {
+        Student student = studentService.updateStudentName(studentId, StudentMapper.INSTANCE.toEntity(studentDto));
+
+        if(student == null) return ResponseEntity.badRequest().build();
+
+        StudentDto studentDtoResponse = StudentMapper.INSTANCE.toDto(student);
+
+        return ResponseEntity.ok(studentDtoResponse);
+    }
+
+    @DeleteMapping("/delete-student/{studentId}")
+    public ResponseEntity<?> deletestudent(@PathVariable Integer studentId) {
+        studentService.deletestudent(studentId);
+
+        return ResponseEntity.ok().build();
+    }
 }

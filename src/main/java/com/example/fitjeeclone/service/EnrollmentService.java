@@ -31,7 +31,14 @@ public class EnrollmentService {
         if(!enrollmentResponse.isPresent()) return null;
 
         enrollmentResponse.get().setStatus(enrollment.getStatus());
+        Enrollment response = enrollmentRepository.save(enrollmentResponse.get());
 
-        return enrollmentResponse.get();
+        return response;
+    }
+
+    public void deleteEnrollment(Integer enrollmentId) {
+        enrollmentRepository.deleteById(enrollmentId);
+
+        return;
     }
 }

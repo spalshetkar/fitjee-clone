@@ -17,9 +17,11 @@ public interface CourseMapper {
 
     @Mapping(source = "courseId", target = "courseId")
     @Mapping(source = "courseName", target = "courseName")
+    @Mapping(source = "description", target = "description")
     CourseDto toDto(Course course);
 
     @Mapping(source = "courseId", target = "courseId")
     @Mapping(source = "courseName", target = "courseName")
+    @Mapping(source = "description", target = "description")
     Course toEntity(CourseDto course);
 }
