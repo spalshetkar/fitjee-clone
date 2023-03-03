@@ -6,7 +6,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
-@Mapper(componentModel = "spring")
+@Mapper
 public interface EnrollmentMapper {
 
     EnrollmentMapper INSTANCE = Mappers.getMapper(EnrollmentMapper.class);
