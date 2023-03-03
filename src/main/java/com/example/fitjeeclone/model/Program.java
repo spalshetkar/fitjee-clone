@@ -1,8 +1,6 @@
 package com.example.fitjeeclone.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,6 +12,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "program")
 public class Program {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer programId;
     private String programName;
     private Integer courseId;
